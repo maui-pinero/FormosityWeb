@@ -54,6 +54,7 @@ class CartController extends Controller
         } else {
             Cart::add($product->id, $product->title, 1, $product->price, 
             ['productImage' => (!empty($product->product_images)) ? $product->product_images->first() : '']);
+            Cart::store('user');
             $status = true;
             $message = '<strong>'.$product->title.'</strong> added to your cart successfully.';
             session()->flash('success',$message);

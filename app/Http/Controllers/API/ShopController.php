@@ -47,8 +47,8 @@ class ShopController extends Controller
     // RETRIEVE ALL PRODUCTS
 
     public function allProducts() {
-        $products = Product::all();
-
+        $products = Product::with('product_images')->get();
+    
         return response()->json([
             'products' => $products
         ]);

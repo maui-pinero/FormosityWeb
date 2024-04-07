@@ -12,6 +12,7 @@
 
             <h1>Thank You!</h1>
             <p>Your Order ID is: {{ $id }}</p>
+            <a href="{{ route('front.shop') }}" class="btn bg-dgreen">Continue Shopping</a>
         </div>
     </section>
 @endsection
